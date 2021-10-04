@@ -8,4 +8,5 @@ if [ ! "$dir" ];then
     exit
 fi
 
-mkdir -p "${PWD}/${dir}" && cd "$_" || exit
+mkdir -p "${PWD}/${dir}" 
+cd "${PWD}/${dir}" || exit
