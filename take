@@ -3,7 +3,7 @@
 link_arg=$1
 
 if [ ! "$1" ];then
-    echo "You need to provide /Path/to/dir/filename."
+    echo "You need to provide /Path/to/dir."
 else
     slash_num=$(echo "$link_arg" | grep -o "/" | wc -l)
     if ((slash_num < 1)); then
@@ -12,6 +12,6 @@ else
     fi
 fi
 
-src_path="${link_arg%/*}"
+# src_path="${link_arg%/*}"
 
-mkdir -p "$src_path" && touch "$link_arg"
+mkdir -p "$link_arg" && cd "$link_arg" || exit
