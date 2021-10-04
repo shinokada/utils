@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 dir=$1
+PWD=$(pwd)
 
 if [ ! "$dir" ];then
     echo "You need to provide /Path/to/dir."
     exit
 fi
 
-mkdir -p "$dir" && cd "$dir" || exit
+mkdir -p "${PWD}/${dir}" && cd "${PWD}/${dir}" || exit
